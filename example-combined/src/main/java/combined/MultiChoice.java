@@ -3,9 +3,9 @@ package combined;
 public class MultiChoice {
 
     private String answer1 = "Blue";
-    private String user_answer1;
+    private String user_answer1 = "";
     private String answer2 = "2";
-    private String user_answer2;
+    private String user_answer2 = "";
 
     //Question 1
     public String getAnswer1() {
