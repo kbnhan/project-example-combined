@@ -22,7 +22,8 @@ public class CombinedController {
     }
 
     @RequestMapping("/result")
-    public String getAnswerParam(@RequestParam("group1") String answer1, @ModelAttribute MultiChoice question1) {
+    public String getAnswerParam(@RequestParam("group1") String answer1, Model model, @ModelAttribute MultiChoice question1) {
+        model.addAttribute("question1", question1);
         question1.setUserAnswer(answer1);
         return "result";
     }
