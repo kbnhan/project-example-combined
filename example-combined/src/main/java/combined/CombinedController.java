@@ -11,19 +11,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class CombinedController {
 
     public String[] question1_options = {"Red", "Yellow", "Blue", "Green"};
+    MultiChoice question1 = new MultiChoice("What is the color of the sky", question1_options, "Blue");
 
     @GetMapping("/combined")
     public String initialize(Model model) {
-        model.addAttribute("question1", new MultiChoice(
-            "What is the color of the sky", 
-            question1_options,
-            "Blue"));
+        model.addAttribute("question1", question1);
         return "combined";
     }
 
     @RequestMapping("/result")
-    public String getAnswerParam(@RequestParam("group1") String answer1, Model model, @ModelAttribute MultiChoice question1) {
+    public String getAnswerParam(@RequestParam("group1") String answer1, Model model) {
         model.addAttribute("question1", question1);
+        model.addAttribute("answer", question1.getAnswer());
         question1.setUserAnswer(answer1);
         return "result";
     }
