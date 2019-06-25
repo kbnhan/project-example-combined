@@ -29,6 +29,8 @@
                   Submit <i class="material-icons right">send</i>
               </button>
             </form>
+            <p th:text="'The answer is: ' + ${question1.getAnswer()}"/>
+            <p th:text="'Your answer is: ' + ${question1.getUserAnswer()}"/>
           </div>
           
       </div>

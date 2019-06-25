@@ -1,37 +1,25 @@
 package combined;
 
-public class MultiChoice {
+public class MultiChoice extends Question{
 
-    private String answer1 = "Blue";
-    private String user_answer1 = "";
-    private String answer2 = "2";
-    private String user_answer2 = "";
+    private String answer;
+    private String user_answer;
 
-    //Question 1
-    public String getAnswer1() {
-        return answer1;
+    public MultiChoice(String text, String[] options, String answer) {
+        super(text, options);
+        this.answer = answer;
     }
 
-    public void setUserAnswer1(String input) {
-        this.user_answer1 = input;
+    public String getAnswer() {
+        return answer;
     }
 
-    public String getUserAnswer1() {
-        return user_answer1;
+    public void setUserAnswer(String input) {
+        this.user_answer = input;
     }
 
-    //Question 2
-    public String getAnswer2() {
-        return answer2;
+    public String getUserAnswer() {
+        return user_answer;
     }
-
-    public void setUserAnswer2(String input) {
-        this.user_answer2 = input;
-    }
-
-    public String getUserAnswer2() {
-        return user_answer2;
-    }
-
     
 }
