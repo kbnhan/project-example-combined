@@ -11,7 +11,7 @@ public class MultiChoice extends Question{
     }
 
     public String getAnswer() {
-        return answer;
+        return this.answer;
     }
 
     public void setUserAnswer(String input) {
@@ -19,7 +19,7 @@ public class MultiChoice extends Question{
     }
 
     public String getUserAnswer() {
-        return user_answer;
+        return this.user_answer;
     }
     
 }

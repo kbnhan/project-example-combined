@@ -2,16 +2,26 @@ package combined;
 
 import java.util.ArrayList;
 
-public class Checkbox {
+public class Checkbox extends Question{
 
-    private ArrayList<String> answers = new ArrayList<String>();
+    private String[] answers; 
+    private ArrayList<String> user_answers = new ArrayList<String>();
 
-    public void addAnswer(String answer) {
-        this.answers.add(answer); 
+    public Checkbox(String text, String[] options, String[] answers) {
+        super(text, options);
+        this.answers = answers;
     }
 
-    public ArrayList<String> getAnswers() {
+    public String[] getAnswers() {
         return this.answers;
+    }
+
+    public void addUserAnswer(String answer) {
+        this.user_answers.add(answer); 
+    }
+
+    public ArrayList<String> getUserAnswers() {
+        return this.user_answers;
     }
 
     

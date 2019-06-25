@@ -15,8 +15,8 @@
 
       <div class="container">
           <div class="row">
-            <form action="#" th:action="@{/result}" th:object="${question1}">
-              <h5 th:text="${question1.text}"/>
+            <form th:action="@{/result}" th:object="${question1}">
+              <h5><b th:text="${question1.text}"/></h5>
               <!--Loop for populating question and options-->
               <p th:each="color: ${question1.options}">
                 <label>
@@ -30,7 +30,13 @@
               </button>
             </form>
           </div>
-          
+
+          <div class="row">
+            <form action="#" th:object="${question2}">
+              <h5><b th:text="${question2.text}"/></h5>
+
+            </form>
+          </div>
       </div>
 
 
