@@ -34,7 +34,14 @@
           <div class="row">
             <form action="#" th:object="${question2}">
               <h5><b th:text="${question2.text}"/></h5>
-
+                <!--Loop for populating question and options-->
+                <p th:each="animal: ${question2.options}">
+                    <label>
+                      <input name="box" type="checkbox" th:value="${animal}"/>
+                      <span th:text="${animal}"/>
+                    </label>
+                  </p>
+                  <!--End loop-->
             </form>
           </div>
       </div>
