@@ -14,6 +14,7 @@ public class CombinedController {
     public String[] question1_options = {"Red", "Yellow", "Blue", "Green"};
     MultiChoice question1 = new MultiChoice("What is the color of the sky", question1_options, "Blue");
 
+    // Initialize Question #2 - a checkbox type
     public String[] question2_options = {"Cats", "Dogs", "Chinchillas"};
     public String[] question2_answers = {"Cats", "Dogs"};
     Checkbox question2 = new Checkbox("What is your favorite animal?", question2_options, question2_answers);
