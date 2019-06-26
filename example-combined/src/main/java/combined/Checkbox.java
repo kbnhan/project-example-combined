@@ -16,6 +16,11 @@ public class Checkbox extends Question{
         return this.answers;
     }
 
+    // To avoid overfilling the list
+    public void clearUserAnswer() {
+        this.user_answers.clear();
+    }
+
     public void addUserAnswer(String answer) {
         this.user_answers.add(answer); 
     }

@@ -12,11 +12,26 @@
   </head>
 
   <body>
-    
+
+    <div class="container">
       <h3><b>Result</b></h3>
-      <h5>Question 1</h5>
-      <p th:text="'The answer is: ' + ${question1.getAnswer()}"/>
-      <p th:text="'Your answer is: ' + ${question1.getUserAnswer()}"/>
+      <div class="row">
+        <h5>Question 1</h5>
+        <p th:text="'The answer is: ' + ${question1.getAnswer()}"/>
+        <p th:text="'Your answer is: ' + ${question1.getUserAnswer()}"/>
+      </div>
+      <div class="row">
+        <h5>Question 2</h5>
+        <p>The answers are:</p>
+        <ul th:each="animal: ${question2.getAnswers()}">
+            <li th:text="${animal}"></li>
+        </ul>
+        <p>Your answers are:</p>
+        <ul th:each="animal: ${question2.getUserAnswers()}">
+            <li th:text="${animal}"></li>
+        </ul>
+      </div>
+    </div>
 
   </body>
 </html>
