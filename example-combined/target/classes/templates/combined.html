@@ -14,41 +14,43 @@
   <body>
 
       <div class="container">
-          <div class="row">
-            <form th:action="@{/result}" th:object="${question1}">
-              <h5><b th:text="${question1.text}"/></h5>
+        <!--Question #1-->
+        <div class="row"> 
+          <form th:action="@{/result}" th:object="${question1}">
+            <h5><b th:text="${question1.text}"/></h5>
+            <!--Loop for populating question and options-->
+            <p th:each="color : ${question1.options}">
+              <label>
+                <input name="group1" type="radio" th:value="${color}"/>
+                <span th:text="${color}"/>
+              </label>
+            </p>
+            <!--End loop-->
+            <button class="btn waves-effect waves-light" type="submit" name="action" value="Submit">
+                Submit <i class="material-icons right">send</i>
+            </button>
+          </form>
+        </div>
+
+        <!--Question #2-->
+        <div class="row"> 
+          <form th:action="@{/result}" th:object="${question2}">
+            <h5><b th:text="${question2.text}"/></h5>
               <!--Loop for populating question and options-->
-              <p th:each="color : ${question1.options}">
-                <label>
-                  <input name="group1" type="radio" th:value="${color}"/>
-                  <span th:text="${color}"/>
-                </label>
+              <p th:each="animal, iterStat : ${question2.options}">
+                  <label>
+                    <input th:name="'box' + ${iterStat.count}" type="checkbox" th:value="${animal}"/>
+                    <span th:text="${animal}"/>
+                  </label>
               </p>
               <!--End loop-->
               <button class="btn waves-effect waves-light" type="submit" name="action" value="Submit">
-                  Submit <i class="material-icons right">send</i>
+                Submit <i class="material-icons right">send</i>
               </button>
-            </form>
-          </div>
-
-          <div class="row">
-            <form th:action="@{/result}" th:object="${question2}">
-              <h5><b th:text="${question2.text}"/></h5>
-                <!--Loop for populating question and options-->
-                <p th:each="animal, iterStat : ${question2.options}">
-                    <label>
-                      <input th:name="'box' + ${iterStat.count}" type="checkbox" th:value="${animal}"/>
-                      <span th:text="${animal}"/>
-                    </label>
-                </p>
-                <!--End loop-->
-                <button class="btn waves-effect waves-light" type="submit" name="action" value="Submit">
-                  Submit <i class="material-icons right">send</i>
-                </button>
-            </form>
-          </div>
+          </form>
+        </div>
+        <!--End container-->
       </div>
-
 
   </body>
 </html>
